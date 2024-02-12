@@ -23,7 +23,7 @@
 
 Ошибки: "1nginx" и resource "docker_image" нет строки названия образа "nginx", name  = "example_${random_password.random_string_FAKE.resulT}" - убираем Fake и буква "T" должна 
 
-быть меленькой
+быть маленькой
 
 6. Ключ -auto-approve в команде terraform apply удаляет подтверждение действия перед применением изменений. Это означает, что Terraform автоматически применит все изменения, 
 
@@ -46,9 +46,11 @@
 
 внутри контейнеров. Поэтому удаление контейнера не приведет к автоматическому удалению связанного с ним образа.
 
-Pulls a Docker image to a given Docker host from a Docker Registry. This resource will not pull new layers of the image automatically unless used in conjunction with 
+```
+force_remove (Boolean) If true, then the image is removed forcibly when the resource is destroyed.
 
-docker_registry_image data source to update the pull_triggers field.
+keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
+```
 
 ## Скриншоты к работе
 
